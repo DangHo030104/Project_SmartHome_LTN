@@ -159,7 +159,7 @@ void PC_Serial_ProcessCommand(uint8_t cmd, UART_HandleTypeDef *huart)
         	HAL_UART_Transmit(huart, (uint8_t*)buffer, strlen(buffer), 100);
         	break;
 
-        default:
+        default:	// MENU
             HAL_UART_Transmit(huart, (uint8_t*)"================ Available commands ================\r\n", strlen("================ Available commands ================\r\n"), 100);
             HAL_UART_Transmit(huart, (uint8_t*)"'0': All system states\r\n", strlen("'0': All system states\r\n"), 100);
             HAL_UART_Transmit(huart, (uint8_t*)"'1': Status and mode of LED1\r\n", strlen("'1': Status and mode of LED1\r\n"), 100);
