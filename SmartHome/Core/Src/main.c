@@ -24,8 +24,6 @@
 /* USER CODE BEGIN Includes */
 
 #include "smart_home_system.h"
-#include "sensor_manager.h"
-#include "pc_serial_com.h"
 
 /* USER CODE END Includes */
 

@@ -11,6 +11,7 @@
 #include "touch_button.h"
 #include "device_control.h"
 #include "user_interface.h"
+#include "pc_serial_com.h"
 
 void smartHome_Init(void)
 {
