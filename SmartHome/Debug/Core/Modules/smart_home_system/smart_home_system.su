@@ -1,2 +1,2 @@
-smart_home_system.c:16:6:smartHome_Init	8	static
-smart_home_system.c:22:6:smartHome_Run	8	static
+smart_home_system.c:15:6:smartHome_Init	8	static
+smart_home_system.c:21:6:smartHome_Run	8	static

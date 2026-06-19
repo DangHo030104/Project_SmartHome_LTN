@@ -27,7 +27,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/STM32CUBEIDE/SmartHome/Core/Modules/smart_home_system/smart_home_system.h
+ D:/STM32CUBEIDE/SmartHome/Core/Modules/smart_home_system/smart_home_system.h \
+ D:/STM32CUBEIDE/SmartHome/Core/Modules/sensor_manager/sensor_manager.h \
+ D:/STM32CUBEIDE/SmartHome/Core/Modules/pc_serial_com/pc_serial_com.h
 
 ../Core/Inc/main.h:
 
@@ -88,3 +90,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 D:/STM32CUBEIDE/SmartHome/Core/Modules/smart_home_system/smart_home_system.h:
+
+D:/STM32CUBEIDE/SmartHome/Core/Modules/sensor_manager/sensor_manager.h:
+
+D:/STM32CUBEIDE/SmartHome/Core/Modules/pc_serial_com/pc_serial_com.h:

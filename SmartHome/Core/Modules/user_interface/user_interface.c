@@ -23,7 +23,7 @@ void userInterfaceInit(void) {
 	ssd1306_Fill(Black);	// Clear màn hình
 
 	ssd1306_SetCursor(0, 0);
-	ssd1306_WriteString("SMART HOME", Font_11x18, White);// Vẽ text vào RAM buffer
+	ssd1306_WriteString("SMART HOME", Font_11x18, White); // Vẽ text vào RAM buffer
 
 	ssd1306_SetCursor(0, 24);
 	ssd1306_WriteString("Welcome to", Font_7x10, White);

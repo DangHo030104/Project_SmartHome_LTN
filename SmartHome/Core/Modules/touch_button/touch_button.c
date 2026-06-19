@@ -59,7 +59,7 @@ void touchButtonUpdate(void)
 
 			lastFanTapTime = HAL_GetTick();
 
-			if(fanTapCount == 2)
+			if(fanTapCount == 2 && fanTouchState == GPIO_PIN_SET)
 			{
 				fanMode = 1;	// Auto
 				fanTapCount = 0;
@@ -67,7 +67,9 @@ void touchButtonUpdate(void)
 			else if(fanTapCount == 1)
 			{
 				fanMode = 0;	// Manual
-				fanState = !fanState;
+//				if(fanTouchState == 0)	fanState = 0;
+//				fanState = !fanState;
+				fanState = !fanTouchState;
 			}
 			lastFanTouchState = fanTouchState;
 		}
@@ -90,7 +92,7 @@ void touchButtonUpdate(void)
 
 			lastLed1TapTime = HAL_GetTick();
 
-			if(led1TapCount == 2)
+			if(led1TapCount == 2 && led1TouchState == GPIO_PIN_SET)
 			{
 				led1Mode = 1;	// Auto
 				led1TapCount = 0;
@@ -98,7 +100,7 @@ void touchButtonUpdate(void)
 			else if(led1TapCount == 1)
 			{
 				led1Mode = 0;	// Manual
-				led1State = !led1State;
+				led1State = !led1TouchState;
 			}
 			lastLed1TouchState = led1TouchState;
 		}
@@ -121,7 +123,7 @@ void touchButtonUpdate(void)
 
 			lastLed2TapTime = HAL_GetTick();
 
-			if(led2TapCount == 2)
+			if(led2TapCount == 2 && led2TouchState == GPIO_PIN_SET)
 			{
 				led2Mode = 1;	// Auto
 				led2TapCount = 0;
@@ -129,7 +131,7 @@ void touchButtonUpdate(void)
 			else if(led2TapCount == 1)
 			{
 				led2Mode = 0;	// Manual
-				led2State = !led2State;
+				led2State = !led2TouchState;
 			}
 			lastLed2TouchState = led2TouchState;
 		}

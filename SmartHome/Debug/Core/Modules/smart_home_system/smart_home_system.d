@@ -32,8 +32,7 @@ Core/Modules/smart_home_system/smart_home_system.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  D:/STM32CUBEIDE/SmartHome/Core/Modules/touch_button/touch_button.h \
  D:/STM32CUBEIDE/SmartHome/Core/Modules/device_control/device_control.h \
- D:/STM32CUBEIDE/SmartHome/Core/Modules/user_interface/user_interface.h \
- D:/STM32CUBEIDE/SmartHome/Core/Modules/pc_serial_com/pc_serial_com.h
+ D:/STM32CUBEIDE/SmartHome/Core/Modules/user_interface/user_interface.h
 
 ../Core/Modules/smart_home_system/smart_home_system.h:
 
@@ -102,5 +101,3 @@ D:/STM32CUBEIDE/SmartHome/Core/Modules/touch_button/touch_button.h:
 D:/STM32CUBEIDE/SmartHome/Core/Modules/device_control/device_control.h:
 
 D:/STM32CUBEIDE/SmartHome/Core/Modules/user_interface/user_interface.h:
-
-D:/STM32CUBEIDE/SmartHome/Core/Modules/pc_serial_com/pc_serial_com.h:

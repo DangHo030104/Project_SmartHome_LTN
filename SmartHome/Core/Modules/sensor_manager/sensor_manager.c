@@ -65,16 +65,6 @@ void sensorManagerUpdate(void)
     }
 }
 
-static uint16_t Read_LDR(void)
-{
-    HAL_ADC_Start(&hadc1);
-    HAL_ADC_PollForConversion(&hadc1, 100);
-    uint16_t value = HAL_ADC_GetValue(&hadc1);
-    HAL_ADC_Stop(&hadc1);
-
-    return value;
-}
-
 void Sensor_Radar_UART_Callback(uint8_t byte)
 {
     radarBuffer[radarIndex++] = byte;
@@ -95,18 +85,29 @@ void Sensor_Radar_UART_Callback(uint8_t byte)
            radarBuffer[radarIndex - 1] == 0xF5)
         {
             Parse_LD2410_Frame(radarBuffer, radarIndex);
-            radarIndex = 0;
+            radarIndex = 0;	// Reset index để chuẩn bị nhận frame mới
         }
     }
+}
+
+static uint16_t Read_LDR(void)
+{
+    HAL_ADC_Start(&hadc1);
+    HAL_ADC_PollForConversion(&hadc1, 100);
+    uint16_t value = HAL_ADC_GetValue(&hadc1);
+    HAL_ADC_Stop(&hadc1);
+
+    return value;
 }
 
 // Hàm phân tích dữ liệu LD2410C
 static void Parse_LD2410_Frame(uint8_t *buf, uint8_t len)
 {
 	/* Frame radar HLK-LD2410C có độ dài tối thiểu ~20 byte */
-    if(len < 20) return;	//
+    if(len < 20) return;
 
     /* Kiểm tra header frame bắt đầu bằng F4 F3 F2 F1 */
+    /* frame hợp lệ có dạng đơn giản: F4 F3 F2 F1 ... dữ liệu ... F8 F7 F6 F5 */
     if(buf[0] != 0xF4 || buf[1] != 0xF3 || buf[2] != 0xF2 || buf[3] != 0xF1)
     {
         return;
@@ -121,7 +122,7 @@ static void Parse_LD2410_Frame(uint8_t *buf, uint8_t len)
      * 0x03 = moving + static
      */
 
-    uint8_t targetState = buf[8];
+    uint8_t targetState = buf[8];	// TargetState ~ byte thứ 9 trong frame
 
     presenceState = (targetState != 0x00) ? 1 : 0;
     movingTarget = (targetState == 0x01 || targetState == 0x03) ? 1 : 0;
